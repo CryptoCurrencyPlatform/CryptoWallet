@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { Buffer } from 'buffer';
+
+// @ts-ignore
+window.Buffer = Buffer;
+
+var bitcoin = require("bitcoinjs-lib");
+
+const bitcoinNetwork = bitcoin.networks.testnet;
+
+
+// Generate a new Bitcoin wallet
+const keyPair = bitcoin.ECPair.makeRandom(bitcoinNetwork);
+const privateKey = keyPair.toWIF();
+const publicKey = keyPair.publicKey.toString('hex');
+const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey });
+
+console.log("Private Key:", privateKey);
+console.log("Public Key:", publicKey);
+console.log("Address:", address);
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
