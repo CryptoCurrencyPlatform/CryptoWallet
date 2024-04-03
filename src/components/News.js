@@ -8,7 +8,7 @@ function NewsTicker() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=YOUR_API_KEY`)
+    axios.get(`https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=db266ac658ba4a5c8648b433644a943c`)
       .then(response => {
         setNews(response.data.articles);
         setIsLoading(false);
