@@ -7,13 +7,13 @@ body {
 }
 
 .App-header {
-  background-color: #ffffff;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: rgb(7, 7, 7);
+  color: rgb(255, 255, 255);
 }
 
 .news-ticker {
@@ -47,7 +47,9 @@ body {
 }
 
 h1, h2, h3 {
-  color: rgba(31, 28, 28, 0.842);
+  color: rgba(255, 255, 255, 0.842);
+
+  margin: 30px;
 }
 
 table {
