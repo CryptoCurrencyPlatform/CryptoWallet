@@ -1,7 +1,7 @@
 import React from 'react';
-import './create_wallet.css';
+import './create_account.css';
 
-export default function CreateWallet() {
+export default function CreateAccount() {
   return (
     <div className='main-container'>
       <div className='main-frame-background1'>
