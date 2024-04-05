@@ -2,7 +2,7 @@ import './App.css';
 import BasePage from './components/basepage/basepage';
 import StartingPage from './components/startingpage/startingpage';
 import CreateWallet from './components/createaccount/createaccount';
-import Login from './components/loginpage/loginpage';
+import Login from './components/loginpage/loginpage.jsx';
 
 function App() {
   return (
