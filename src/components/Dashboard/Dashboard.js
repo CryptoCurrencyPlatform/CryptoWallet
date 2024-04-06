@@ -20,7 +20,8 @@ function Dashboard() {
     const holdingsData = [
         { id: 'bitcoin', symbol: 'BTC', amount: 0.5, cost_basis: 30000 }, // replace with actual data
         { id: 'ethereum', symbol: 'ETH', amount: 2, cost_basis: 1500 },
-        { id: 'litecoin', symbol: 'LTC', amount: 1, cost_basis: 1500 },// replace with actual data
+        { id: 'litecoin', symbol: 'LTC', amount: 1, cost_basis: 1500 },
+        { id: 'ripple', symbol: 'XRP', amount: 1, cost_basis: 1500 },// replace with actual data
         // add more coins here...
       ];
 
@@ -59,22 +60,25 @@ function Dashboard() {
       // Fetch historical data for the selected date range
       const promises = [];
       const date = new Date(startDate);
+      
       while (date <= endDate) {
-        const formattedDate = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+        const day = date.getDate();
+        const month = date.getMonth();
+        const year = date.getFullYear();
     
-        const promise = axios.get(`http://localhost:3000/api/v3/coins/${id}/history?date=${formattedDate}`, {
+        const promise = axios.get(`http://localhost:3000/api/v3/coins/${id}/history?date=${year}-${month + 1}-${day}`, {
           headers: {
             'X-CoinAPI-Key': api_key
           }
         })
-          .then(response => {
-            const price = response.data.market_data.current_price.usd;
-            return [Date.parse(formattedDate), price];
-          })
-          .catch(error => {
-            console.error('Error fetching historical data', error);
-            return [Date.parse(formattedDate), 0]; // Return a default value
-          });
+        .then(response => {
+          const price = response.data.market_data.current_price.usd;
+          return [date.getTime(), price]; // Using getTime() to get milliseconds since epoch
+        })
+        .catch(error => {
+          console.error('Error fetching historical data', error);
+          return [date.getTime(), 0]; // Return a default value
+        });
     
         promises.push(promise);
         date.setDate(date.getDate() + 1); // Increment the date

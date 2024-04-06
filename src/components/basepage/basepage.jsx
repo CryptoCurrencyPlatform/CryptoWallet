@@ -4,6 +4,7 @@ import useMetaMask from '../hooks/metaMaskHook';
 import { Link} from 'react-router-dom';
 import Animate_page from '../../Animate-page';
 
+
 export default function BasePage() {
     const {
       web3,
@@ -59,11 +60,11 @@ export default function BasePage() {
           </div>
           <div className='flex-row-fa'>
             <div className='eth-icon' />
-            <span className='pound-amount'>£505.23</span>
+            <span className='pound-amount'>${holding.current_price.toFixed(2)}</span>
             <span className='ethereum'>Ethereum</span>
             <div className='graph-eth' />
             <span className='eth'>ETH</span>
-            <span className='eth-amount'>50 ETH</span>
+            <span className='eth-amount'>{holding.amount} {holding.symbol}</span>
           </div>
           <div className='flex-row-eed'>
             <div className='rectangle-1'>
