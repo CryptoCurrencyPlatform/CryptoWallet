@@ -96,24 +96,24 @@ const FAQPage = () => {
                        <h1>Frequently Asked Questions</h1>
                       <div className="questions">
                         <div className="question">
-                           <h2 onClick={() => toggleQuestion(1)}>How Deposit / Withdraw money?</h2>
-                           {openQuestions[1] && <p>Follow these steps:.</p>}
+                           <h2 onClick={() => toggleQuestion(1)}>How Do I set up the wallet?</h2>
+                           {openQuestions[1] && <p>It is essential to install the chrome ESTENSION of METAMASK and create a wallet</p>}
                         </div>
                         <div className="question">
-                           <h2 onClick={() => toggleQuestion(2)}>How do I perform transactions?</h2>
-                           {openQuestions[2] && <p>Do this:</p>}
+                           <h2 onClick={() => toggleQuestion(2)}>How do I send Transactions?</h2>
+                           {openQuestions[2] && <p>Get the address from MetaMask, add recepient address and Send. 2. Confirm transaction via MetaMask to finish the transaction</p>}
                         </div>
                         <div className="question">
-                           <h2 onClick={() => toggleQuestion(3)}>How do I do something else?</h2>
-                           {openQuestions[3] && <p>Do this:</p>}
+                           <h2 onClick={() => toggleQuestion(3)}>How do I Deposit Currency?</h2>
+                           {openQuestions[3] && <p>Select the appropriate bank account, select token amount an click deposit</p>}
                         </div>
                         <div className="question">
-                           <h2 onClick={() => toggleQuestion(4)}>And what about this?</h2>
-                           {openQuestions[4] && <p>Do this:</p>}
+                           <h2 onClick={() => toggleQuestion(4)}>How do I Withdraw Curency?</h2>
+                           {openQuestions[4] && <p>Choose the appropriate bank account, select token amount an click withdraw</p>}
                         </div>
                         <div className="question">
-                           <h2 onClick={() => toggleQuestion(5)}>And what about this?</h2>
-                           {openQuestions[5] && <p>Do this:</p>}
+                           <h2 onClick={() => toggleQuestion(5)}>How do I contact you?</h2>
+                           {openQuestions[5] && <p>Click on live chat, sign in with google and begin to talk! customer service will get in touch shortly</p>}
                         </div>
                         {/* Add more questions here */}
                       </div>
